@@ -50,8 +50,12 @@ export const MetroStore = (props) => {
     }, [beat, bpm, playing])
 
     const changeBMP = (value) => {
-        clearInterval(timer)
-        setBPM(value)
+        if (bpm === value) {
+            return
+        } else {
+            setBPM(value)
+            clearInterval(timer)
+        }
     }
 
     const changeBeat = (e) => {
