@@ -19,8 +19,8 @@ const MetroFrame = () => {
                         <button className={styles.startButton} onClick={metrocontext.startStop}>{metrocontext.playing ? 'Pause' : 'Start'}</button>
                     </div>
                     <div className={styles.controls} onChange={(e) => e.stopPropagation()} >
-                        <input type="range" min="40" max="200" step="1" value={metrocontext.beat} className={styles.inputBar} onChange={(e) => metrocontext.changeBeat(e)} />
-                        <div className={styles.bpmView}>{`BPM: ${metrocontext.beat}`}</div>
+                        <input id="BPMBar" type="range" min="40" max="200" step="1" value={metrocontext.beat} className={styles.inputBar} onChange={(e) => metrocontext.changeBeat(e)} />
+                        <label htmlFor="BPMBar"><div className={styles.bpmView}>{`BPM: ${metrocontext.beat}`}</div></label>
                         <div className={styles.eighths}>
                             <div className={`${styles.one} ${styles.circle}`} onClick={() => metrocontext.changeBMP(1)}>1</div>
                             <div className={`${styles.two} ${styles.circle}`} onClick={() => metrocontext.changeBMP(2)}>2</div>
