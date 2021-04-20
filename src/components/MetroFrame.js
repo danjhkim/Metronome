@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useRef } from 'react'
-
-import { TweenMax, TimelineMax } from "gsap";
+import React, { useContext, useEffect, useRef, useState } from 'react'
+import { Player, Controls } from '@lottiefiles/react-lottie-player';
+import { TweenMax } from "gsap";
 
 import styles from '../styles/MetroFrame.module.css'
 
@@ -8,33 +8,42 @@ import { MetroContext } from "../contexts/MetroContext"
 
 import Screen from './Screen'
 
+import animationData from '../images/Arrow.json'
+
 const MetroFrame = () => {
     const metrocontext = useContext(MetroContext)
     const boxRef = useRef()
-    const arrow = useRef()
+    const player = useRef()
+    const startButtonRef = useRef()
 
     useEffect(() => {
-        TweenMax.from(boxRef.current, { y: -900, delay: .2, ease: "bounce.out", duration: 1.5 })
+        TweenMax.from(boxRef.current, { y: -1200, delay: .2, ease: "bounce.out", duration: 1.5 })
+        setTimeout(() => {
+            player.current.play()
+        }, 2000)
 
-        TweenMax.fromTo(arrow.current, 1, { y: -100, opacity: 0 }, { y: 0, opacity: 1, delay: 1.4 })
-
-
-        var tlanimation = new TimelineMax({ repeat: -1, yoyo: true, delay: 2 })
-        tlanimation.to(arrow.current, .3, { x: 15 })
-
-        TweenMax.to(arrow.current, 0.3, { delay: 5, autoAlpha: 0 })
-
+        setTimeout(() => {
+            startButtonRef.current.style.display = "none"
+        }, 5000)
 
     }, [])
 
     return (
         <div>
-            <div className={styles.arrow_box} ref={arrow}><div className={styles.try}>TRY ME</div></div>
             <div className={styles.box} ref={boxRef}>
                 <div className={styles.innerbox}>
                     <Screen />
                     <div className={styles.controlBox}>
                         <div className={styles.buttonBox}>
+                            <div className={styles.arrow_box} ref={startButtonRef}>
+                                <Player
+                                    ref={player}
+                                    loop={false}
+                                    src={animationData}
+                                    style={{ height: '500px', width: '500px' }}>
+                                    <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
+                                </Player>
+                            </div>
                             <button className={styles.startButton} onClick={metrocontext.startStop}>{metrocontext.playing ? 'Pause' : 'Start'}</button>
                         </div>
                         <div className={styles.controls} onChange={(e) => e.stopPropagation()} >
@@ -50,7 +59,7 @@ const MetroFrame = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
 
