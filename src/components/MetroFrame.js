@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
 import { Player, Controls } from '@lottiefiles/react-lottie-player';
 import { TweenMax } from "gsap";
 
