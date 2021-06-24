@@ -1,15 +1,24 @@
 .box {
-    width:80vmin;
-    height:80vmin;
-    background-color: rgb(192, 103, 192);
-    border-radius: 2em;
-    border:4px solid rgb(133, 53, 106);
-    box-shadow: -2px -5px 10px 2px black;
+    width:65vmin;
+    background-color: rgb(136, 190, 192);
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     z-index: 1000;
+    --notchSize: 25px;
+  
+  clip-path: 
+    polygon(
+      0% var(--notchSize), 
+      var(--notchSize) 0%, 
+      calc(100% - var(--notchSize)) 0%, 
+      100% var(--notchSize), 
+      100% calc(100% - var(--notchSize)), 
+      calc(100% - var(--notchSize)) 100%, 
+      var(--notchSize) 100%, 
+      0% calc(100% - var(--notchSize))
+    );
 }
 
 .innerbox {
@@ -20,7 +29,7 @@
 
 .inputBar {
    -webkit-appearance: none;
-  width: 100%;
+   width:45vmin;
   height: 15px;
   border-radius: 5px;  
   background:white;
@@ -61,14 +70,14 @@
 
 .eighths {
     background-color: rgb(206, 205, 205);
-    width:65vmin;
-    height:20vmin;
+    width:50vmin;
+    padding:1rem;
     margin: 0 auto;
     border-radius: 1em;
     display:flex;
     justify-content: center;
     align-items: center;
-    box-shadow: -2px -1px 2px 2px black;
+
 }
 
 .controls {
@@ -86,15 +95,14 @@
 }
 
 .startButton {
-    width:20vmin;
-    height:2em;
+    width:10rem;
     border:none;
     outline: none;
     box-sizing:border-box;
     border-radius: 20px;
     margin: 0 auto;
     font-size: 1.5em;
-    background-color: blueviolet;
+    background-color: rgb(231, 155, 93);
     margin-bottom:10px;
     cursor: pointer;
  
@@ -106,13 +114,13 @@
 }
 
 .startButton:hover {
-    background-color: rgb(109, 35, 179);
+    background-color: rgb(231, 155, 93);
 }
 
 .circle {
-    background-color: rgb(200, 119, 194);
-    width:12vmin;
-    height:12vmin;
+    background-color: rgb(231, 155, 93);
+    width:5rem;
+    padding:2vmin;
     border-radius: 50%;
     margin-right:1em;
     display: flex;
@@ -122,13 +130,12 @@
     outline:none;
     font-size: 2em;
     vertical-align: top;
-    box-shadow: -1px -1px 1px 1px rgb(109, 109, 109);
 }
 
 .circle:active {
-    background-color: rgb(148, 73, 140);
+    background-color: rgb(165, 109, 64);
     box-shadow: 0 0 0 white;
-    margin-top:4px;
+  
 }
 
 .circle:last-of-type {
@@ -159,6 +166,10 @@
 }
 
 @media only screen and (max-width: 750px) {
+    .box {
+        width:50vmin;
+
+    }
      .arrow_box {
          left:-180px;
         
@@ -178,12 +189,14 @@
 
     .circle {
     width:11vmin;
-    height:11vmin;
+   
     font-size: 1.5em
     }
 }
 
 @media only screen and (max-width: 630px) {
+
+
     .arrow_box {
         left:-200px;
         top:-227px;
@@ -199,8 +212,8 @@
     }
 
     .circle {
-        width:11vmin;
-        height:11vmin;
+        width:5rem;
+        height:5rem;       
         font-size: 1.5em
     }
 
@@ -232,12 +245,17 @@
 @media only screen and (max-width: 530px) {
 
     .box {
+        width:80vmin;
+        height:30rem;
         padding:1em 0;
+
     }
 
+    
+
      .circle {
-        width:10vmin;
-        height:10vmin;
+        width:4rem;
+        height:4rem;
         font-size: 1.5em
     }
 }
@@ -281,6 +299,8 @@
 
     .box {
         padding:3em 0;
+        width:80vmin;
+        height:25rem;
     }
 
     .circle {
