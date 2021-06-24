@@ -152,12 +152,12 @@
     position: absolute;
     z-index: -100;
     top:-222px;
-    left:-120px
+    left:-160px
 }
 
 @media only screen and (max-width: 850px) {
     .arrow_box {
-        left:-147px;
+        left:-180px;
     }
     .box {
         padding:.4em 0;
