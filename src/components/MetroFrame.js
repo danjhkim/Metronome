@@ -17,7 +17,7 @@ const MetroFrame = () => {
     const startButtonRef = useRef()
 
     useEffect(() => {
-        TweenMax.from(boxRef.current, { y: -1200, delay: .2, ease: "bounce.out", duration: 1.5 })
+        TweenMax.from(boxRef.current, { y: -1500, delay: .2, ease: "bounce.out", duration: 1.5 })
         setTimeout(() => {
             player.current.play()
         }, 2000)

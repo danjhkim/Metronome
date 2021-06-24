@@ -1,5 +1,5 @@
 .box {
-    width:65vmin;
+    width:55vmin;
     background-color: rgb(136, 190, 192);
     display: flex;
     justify-content: center;
@@ -29,7 +29,7 @@
 
 .inputBar {
    -webkit-appearance: none;
-   width:45vmin;
+   width:40vmin;
   height: 15px;
   border-radius: 5px;  
   background:white;
@@ -70,7 +70,7 @@
 
 .eighths {
     background-color: rgb(206, 205, 205);
-    width:50vmin;
+    width:40vmin;
     padding:1rem;
     margin: 0 auto;
     border-radius: 1em;
@@ -157,7 +157,7 @@
 
 @media only screen and (max-width: 850px) {
     .arrow_box {
-        left:-180px;
+        left:-220px;
     }
     .box {
         padding:.4em 0;
@@ -167,24 +167,19 @@
 
 @media only screen and (max-width: 750px) {
     .box {
-        width:50vmin;
+        width:70vmin;
 
     }
-     .arrow_box {
-         left:-180px;
-        
-    }
-
-    .box {
-        width:72vmin;
+    .arrow_box {
+        left:-220px;
     }
 
     .inputBar{
-        width:60vmin;
+        width:50vmin;
     }
 
     .eighths {
-        width:60vmin;
+        width:50vmin;
     }
 
     .circle {
@@ -208,7 +203,7 @@
 
 
     .eighths {
-        width:60vmin;
+        width:55vmin;
     }
 
     .circle {
@@ -228,7 +223,7 @@
 @media only screen and (max-width: 600px) {
 
     .eighths {
-        width:60vmin;
+        width:55vmin;
     }
 
     .circle {
